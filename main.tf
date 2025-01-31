@@ -1,14 +1,21 @@
 terraform {
   required_providers {
-    aws = "hashicorp/aws"
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.82.2"
+    }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = ">=2.35.0"
+    }
   }
-  required_version = "1.10.0"
+  required_version = "1.10.3"
 }
 
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_vpc" "test" {
+resource "aws_eip" "test" {
   
 }
